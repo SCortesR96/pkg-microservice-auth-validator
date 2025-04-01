@@ -1,0 +1,22 @@
+{
+	"name": "mydevzone/microservice-auth-validator",
+	"description": "Middleware para validación de Tokens JWT y validación de permisos",
+	"type": "library",
+	"autoload": {
+		"psr-4": {
+			"MyDevZone\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"MyDevZone\\Providers\\JwtAuthServiceProvider"
+			]
+		}
+	},
+	"require": {
+		"php": "^8.2",
+		"illuminate/support": "^11.0",
+		"firebase/php-jwt": "^6.11"
+	}
+}
