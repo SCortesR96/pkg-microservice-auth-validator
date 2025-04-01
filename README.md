@@ -83,5 +83,5 @@ Este paquete es de código abierto y se distribuye bajo la licencia MIT.
 
 ---
 
-> Desarrollado por [My Dev Zone](https://github.com/MyDevZone).
+> Desarrollado por [My Dev Zone - Sergio Cortés]().
 
