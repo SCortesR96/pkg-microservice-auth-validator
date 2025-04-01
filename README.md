@@ -9,24 +9,7 @@ Puedes instalar este paquete a través de Composer ejecutando el siguiente coman
 ```sh
 composer require mydevzone/microservice-auth-validator
 ```
-
-Si estás utilizando este paquete en un entorno de desarrollo local sin publicación en Packagist, asegúrate de agregarlo en el `composer.json` de tu proyecto:
-
-```json
-"repositories": [
-    {
-        "type": "path",
-        "url": "../Packages/MyDevZone/MicroServiceAuthValidatorPackage"
-    }
-]
-```
-
-Luego, ejecuta:
-
-```sh
-composer require mydevzone/microservice-auth-validator:dev-main
-```
-
+<!-- 
 ## Configuración
 
 Después de instalar el paquete, Laravel detectará automáticamente el `JwtAuthServiceProvider`. Sin embargo, si necesitas registrarlo manualmente, agrégalo en `config/app.php` dentro de la sección `providers`:
@@ -45,21 +28,13 @@ Si deseas modificar la configuración del paquete, puedes publicarla con:
 php artisan vendor:publish --tag=microservice-auth-validator-config
 ```
 
-Esto creará un archivo en `config/microservice-auth.php` donde puedes ajustar los valores según tus necesidades.
+Esto creará un archivo en `config/microservice-auth.php` donde puedes ajustar los valores según tus necesidades. -->
 
 ## Uso
 
 ### Middleware JWT
 
-Este middleware verifica que el token JWT sea válido antes de procesar la solicitud. Para aplicarlo en tus rutas, agrégalo en el archivo `app/Http/Kernel.php`:
-
-```php
-protected $routeMiddleware = [
-    'jwt.auth' => \MyDevZone\Middleware\JwtMiddleware::class,
-];
-```
-
-Luego, úsalo en tus rutas:
+Úsalo en tus rutas:
 
 ```php
 Route::get('/protected-route', [ProtectedController::class, 'index'])
@@ -68,15 +43,7 @@ Route::get('/protected-route', [ProtectedController::class, 'index'])
 
 ### Middleware de Permisos
 
-Este middleware valida si el usuario tiene el permiso requerido para acceder a una ruta específica. Se agrega de la siguiente manera:
-
-```php
-protected $routeMiddleware = [
-    'permission' => \MyDevZone\Middleware\PermissionMiddleware::class,
-];
-```
-
-Para proteger rutas con permisos específicos:
+Úsalo para proteger rutas con permisos específicos:
 
 ```php
 Route::get('/admin', [AdminController::class, 'index'])
@@ -109,7 +76,6 @@ class ExampleController extends Controller {
 
 - PHP 8.2+
 - Laravel 11+
-- `firebase/php-jwt` para la validación de tokens JWT
 
 ## Licencia
 
